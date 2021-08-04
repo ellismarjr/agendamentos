@@ -16,11 +16,11 @@ class Appointment {
   id: string;
 
   @Column()
-  provider_id: number;
+  user_id: string;
 
   @ManyToOne(() => User)
-  @JoinColumn({ name: 'provider_id' })
-  provider: User;
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @Column('timestamp with time zone')
   date: Date;

@@ -12,7 +12,7 @@ export default class AlterProviderFieldToProviderId1593128769175
     await queryRunner.addColumn(
       'appointments',
       new TableColumn({
-        name: 'provider_id',
+        name: 'user_id',
         type: 'uuid',
         isNullable: true,
       }),
@@ -22,7 +22,7 @@ export default class AlterProviderFieldToProviderId1593128769175
       'appointments',
       new TableForeignKey({
         name: 'AppointmentProvider',
-        columnNames: ['provider_id'],
+        columnNames: ['user_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'users',
         onDelete: 'SET NULL',
